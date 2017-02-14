@@ -1,12 +1,49 @@
-*.class
+# common ignore
+*~
+MANIFEST.MF
+target/
+tmp/
+build/
+scripts/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+*.class
 
 # Package Files #
 *.jar
+!lib/*.jar
 *.war
-*.ear
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+# eclipse specific
+.settings
+.project
+.classpath
+.metadata
+
+# idea specific
+.idea/*
+!.idea/codeStyleSettings.xml
+*.iml
+*.ipr
+*.iws
+
+# gradle specific
+.gradle/
+build
+gradle/wrapper/gradle-wrapper.properties
+gradlew
+gradlew.bat
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# unix specific
+.DS_Store
+.directory
+
+# static plugins
+.pmd
+
+# log files
+*.log
+*.csv
+*.txt

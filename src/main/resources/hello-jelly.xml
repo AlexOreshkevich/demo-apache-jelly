@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<j:jelly
+        xmlns:j="jelly:core"
+        xmlns:l="jelly:log"
+        xmlns:i="jelly:interaction">
+
+    <i:ask
+            question="Enter your name: "
+
+            answer="name"
+
+            default="anonymous"/>
+
+    <l:info>Hello ${name}, welcome to Jelly!</l:info>
+
+
+</j:jelly>

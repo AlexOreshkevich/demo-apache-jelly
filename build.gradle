@@ -1,0 +1,46 @@
+apply plugin: 'java'
+compileJava {
+    sourceCompatibility = "1.8"
+    targetCompatibility = "1.8"
+    options.encoding = 'UTF-8'
+}
+
+ext {
+    log4jVersion = "2.8"
+    guavaVersion = "19.0"
+    junitVersion = "4.12"
+    jacksonVersion = "2.8.6"
+}
+
+// configure repositories
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+
+    // compile fileTree(dir: 'lib', include: ['*.jar'])
+    compile 'maven:commons-jelly:1.0.1-20060717'
+
+    compile "org.apache.logging.log4j:log4j-slf4j-impl:${log4jVersion}"
+    compile "org.apache.logging.log4j:log4j-core:${log4jVersion}"
+    compile "org.apache.logging.log4j:log4j-api:${log4jVersion}"
+    compile "org.apache.logging.log4j:log4j-jcl:${log4jVersion}"
+    compile "org.apache.logging.log4j:log4j-1.2-api:${log4jVersion}"
+    compile "org.apache.logging.log4j:log4j-web:${log4jVersion}"
+
+    compile "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:${jacksonVersion}"
+    compile "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+
+    compile 'org.dom4j:dom4j:2.0.0'
+
+    compile 'commons-collections:commons-collections:3.2.2'
+    compile 'commons-beanutils:commons-beanutils:20030211.134440'
+    compile 'org.apache.commons:commons-jexl:2.1.1'
+    compile 'commons-jexl:commons-jexl:20040901.055348'
+
+    // testing
+    testCompile("junit:junit:$junitVersion")
+}
